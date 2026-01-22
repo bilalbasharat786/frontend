@@ -37,7 +37,7 @@ const Hero = () => {
 
   return (
     <section className="h-screen bg-cover bg-center relative font-sans overflow-hidden" style={{ backgroundImage: `url(${heroImage})` }}>
-      <div className="absolute inset-0 bg-cover bg-center blur-sm scale-110" style={{ backgroundImage: `url(${heroImage})` }}></div>
+      <div className="absolute inset-0 bg-cover bg-center scale-110" style={{ backgroundImage: `url(${heroImage})` }}></div>
       <div className="absolute inset-0 bg-[#b8b2a6b3] flex flex-col items-center justify-center text-center px-4 text-white">
         
         {/* AnimatePresence slides */}

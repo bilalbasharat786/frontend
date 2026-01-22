@@ -5,13 +5,13 @@ import aboutUsImg from '../assets/aboutus.jpg';
 const AboutUs = () => {
   // Animation Variants
   const textFadeIn = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0, transition: { duration: 2, ease: "easeOut" } }
   };
 
   const imageFadeIn = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 80 },
+    visible: { opacity: 1, y: 0, transition: { duration: 2, ease: "easeOut" } }
   };
 
   return (
@@ -20,10 +20,10 @@ const AboutUs = () => {
         
         {/* Section Heading with Slow Fade Up */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 2 }}
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="text-orange-500 text-4xl md:text-5xl font-bold mb-6">
@@ -42,7 +42,7 @@ const AboutUs = () => {
             className="w-full lg:w-1/2 relative"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ repeat: true, amount: 0.3 }}
             variants={imageFadeIn}
           >
             {/* Background decorative circle - Hidden on very small screens */}
@@ -50,7 +50,7 @@ const AboutUs = () => {
             <img 
               src={aboutUsImg} 
               alt="Our Story" 
-              className="w-full h-auto rounded-lg shadow-xl object-cover" 
+              className="w-full h-auto  shadow-xl object-cover" 
             />
           </motion.div>
 
@@ -59,7 +59,7 @@ const AboutUs = () => {
             className="w-full lg:w-1/2 text-left"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ repeat: true, amount: 0.3 }}
             variants={textFadeIn}
           >
             <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 leading-tight">
@@ -75,9 +75,7 @@ const AboutUs = () => {
             </div>
             
             {/* Action Link if needed */}
-            <motion.div whileHover={{ x: 5 }} className="mt-8">
-               <a href="#" className="text-orange-500 font-medium hover:underline">Read More →</a>
-            </motion.div>
+           
           </motion.div>
 
         </div>

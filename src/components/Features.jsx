@@ -11,7 +11,7 @@ const Features = () => {
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { duration: 0.8, ease: "easeOut" } 
+      transition: { duration: 2, ease: "easeOut" } 
     }
   };
 
@@ -44,7 +44,7 @@ const Features = () => {
               key={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ repeat: true, amount: 0.2 }}
               variants={fadeInUp}
               className="flex flex-col items-center group"
             >
@@ -63,10 +63,10 @@ const Features = () => {
           {/* Left: Image with Slow Motion Fade In */}
           <motion.div 
             className="w-full lg:w-1/2"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ repeat: true }}
+            transition={{ duration: 2 }}
           >
             <img 
               src={aboutImg} 
@@ -78,10 +78,10 @@ const Features = () => {
           {/* Right: Content with Slow Motion Fade In */}
           <motion.div 
             className="w-full lg:w-1/2 text-left"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            initial={{ opacity: 0, y: 80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ repeat: true }}
+            transition={{ duration: 2, delay: 1 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-6 tracking-tight leading-tight">
               Amortization Computation
