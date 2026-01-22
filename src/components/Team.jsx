@@ -29,7 +29,7 @@ const Team = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: { staggerChildren: 0.3 },
     },
   };
 
@@ -48,9 +48,9 @@ const Team = () => {
         
         {/* Section Heading */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ repeat: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-20"
         >
@@ -67,7 +67,7 @@ const Team = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ repeat: true, amount: 0.1 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8"
         >
           {teamMembers.map((member, index) => (
