@@ -84,8 +84,8 @@ const Pricing = () => {
               whileHover={{ scale: plan.featured ? 1.05 : 1.03, zIndex: 20 }}
               className={`bg-white p-8 md:p-12 text-center transition-all relative ${
                 plan.featured 
-                ? 'shadow-2xl z-10 py-16 md:py-24 border-t-8 border-orange-500 rounded-lg lg:rounded-none lg:scale-110' 
-                : 'border border-gray-100 shadow-sm rounded-lg lg:rounded-none'
+                ? 'shadow-2xl z-10 py-16 md:py-24 border-t-8  rounded-lg lg:rounded-none lg:scale-110' 
+                : ' border-gray-10 shadow-sm rounded-lg lg:rounded-none'
               }`}
             >
               <h3 className="text-2xl font-semibold text-gray-800 mb-8 uppercase tracking-widest">{plan.name}</h3>
