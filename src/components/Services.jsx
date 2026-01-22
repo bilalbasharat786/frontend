@@ -1,0 +1,113 @@
+import React from 'react';
+import { motion } from 'framer-motion'; // Animation library
+// Assets se icons import
+import s1 from '../assets/services_1.svg';
+import s2 from '../assets/services_2.svg';
+import s3 from '../assets/services_3.svg';
+import s4 from '../assets/services_4.svg';
+import s5 from '../assets/services_5.svg';
+import s6 from '../assets/services_6.svg';
+
+const Services = () => {
+  const serviceData = [
+    { title: "Business Consulting", icon: s1, desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia." },
+    { title: "Credit Card", icon: s2, desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia." },
+    { title: "Income Monitoring", icon: s3, desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia." },
+    { title: "Insurance Consulting", icon: s4, desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia." },
+    { title: "Financial Investment", icon: s5, desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia." },
+    { title: "Financial Management", icon: s6, desc: "A small river named Duden flows by their place and supplies it with the necessary regelialia." }
+  ];
+
+  // Container Variant: Cards ko bari bari show karne ke liye
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15 // Har card 0.15s ke gap se aayega
+      }
+    }
+  };
+
+  // Card Variant: Niche se upar aane wali animation
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.7, ease: "easeOut" } 
+    }
+  };
+
+  return (
+    <section id="services-section" className="py-16 md:py-24 bg-gray-50 font-sans overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Section Heading - Slow Fade Up */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16 md:mb-20"
+        >
+          <h2 className="text-orange-500 text-4xl md:text-5xl font-bold mb-4">
+            Our Services
+          </h2>
+          <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
+        </motion.div>
+
+        {/* Services Grid - Responsive: 1 Col (Mobile), 2 Col (Tablet), 3 Col (Desktop) */}
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16"
+        >
+          {serviceData.map((service, index) => (
+            <motion.div 
+              key={index} 
+              variants={cardVariants}
+              className="flex flex-col items-start group"
+            >
+              
+              {/* Icon Container with Hover Animation */}
+              <motion.div 
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                className="mb-6 p-4 bg-white rounded-2xl shadow-sm group-hover:shadow-md transition-all duration-300"
+              >
+                <img 
+                  src={service.icon} 
+                  alt={service.title} 
+                  className="w-12 h-12 md:w-16 md:h-16 object-contain" 
+                />
+              </motion.div>
+
+              {/* Text Content */}
+              <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-orange-500 transition-colors duration-300">
+                {service.title}
+              </h3>
+              
+              <p className="text-gray-400 leading-relaxed mb-6 text-sm md:text-[15px] font-light">
+                {service.desc}
+              </p>
+
+              {/* Learn More Link */}
+              <motion.a 
+                href="#" 
+                whileHover={{ x: 5 }}
+                className="text-orange-500 text-sm font-bold tracking-widest uppercase flex items-center gap-2 group-hover:gap-3 transition-all"
+              >
+                Learn More <span>→</span>
+              </motion.a>
+              
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;
