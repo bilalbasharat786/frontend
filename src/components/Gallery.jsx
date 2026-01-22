@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'; // Animation library
+import { motion, AnimatePresence } from 'framer-motion';
 // Images import
 import img1 from '../assets/img_1.jpg';
 import img2 from '../assets/img_2.jpg';

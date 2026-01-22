@@ -75,7 +75,7 @@ const Services = () => {
               {/* Icon Container with Hover Animation */}
               <motion.div 
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="mb-6 p-4 bg-white rounded-2xl shadow-sm group-hover:shadow-md transition-all duration-300"
+                className="mb-6 p-4 "
               >
                 <img 
                   src={service.icon} 

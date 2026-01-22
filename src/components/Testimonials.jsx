@@ -38,10 +38,10 @@ const Testimonials = () => {
         
         {/* Main Heading with Scroll Animation */}
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ repeat: true }}
+          transition={{ duration: 2 }}
           className="text-orange-500 text-4xl md:text-5xl font-bold mb-12 md:mb-16"
         >
           Happy Customers
@@ -71,7 +71,7 @@ const Testimonials = () => {
                 <img 
                   src={reviews[activeTab].img} 
                   alt={reviews[activeTab].name} 
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover mb-4 shadow-lg border-2 border-orange-100"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover mb-4 "
                 />
                 <span className="text-gray-600 font-semibold tracking-wide">
                   {reviews[activeTab].name}
@@ -96,7 +96,7 @@ const Testimonials = () => {
               {activeTab === index && (
                 <motion.span 
                   layoutId="activeDot"
-                  className="absolute inset-0 border border-orange-500 rounded-full"
+                  className="absolute inset-0  border-orange-500 rounded-full"
                 />
               )}
             </button>
