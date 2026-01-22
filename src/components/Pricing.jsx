@@ -64,7 +64,7 @@ const Pricing = () => {
         <motion.h2 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ repeat: true }}
           transition={{ duration: 0.6 }}
           className="text-orange-500 text-4xl md:text-5xl font-bold text-center mb-16 md:mb-24"
         >
@@ -80,7 +80,7 @@ const Pricing = () => {
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
+              viewport={{ repeat: true, amount: 0.2 }}
               whileHover={{ scale: plan.featured ? 1.05 : 1.03, zIndex: 20 }}
               className={`bg-white p-8 md:p-12 text-center transition-all relative ${
                 plan.featured 
