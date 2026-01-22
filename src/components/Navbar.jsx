@@ -43,7 +43,7 @@ const Navbar = () => {
         }`}
       >
         {/* Logo */}
-        <div className={`text-2xl font-bold tracking-tight cursor-pointer ${scrolled ? 'text-orange-500' : 'text-white'}`} onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>
+        <div className={`text-5xl font-sm -tracking-normal cursor-pointer ${scrolled ? 'text-orange-500' : 'text-white'}`} onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>
           Banker<span className="text-orange-500">.</span>
         </div>
 
