@@ -5,7 +5,6 @@ import heroImage from "../assets/hero_2.jpg";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Slides ka data
   const slides = [
     {
       title: "Banking Solutions",
@@ -41,7 +40,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-cover bg-center blur-sm scale-110" style={{ backgroundImage: `url(${heroImage})` }}></div>
       <div className="absolute inset-0 bg-[#b8b2a6b3] flex flex-col items-center justify-center text-center px-4 text-white">
         
-        {/* AnimatePresence slides ke change hone par animation handle karta hai */}
+        {/* AnimatePresence slides */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -51,7 +50,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }} // Slow motion effect
             className="flex flex-col items-center"
           >
-            <h1 className="text-4xl md:text-[85px] font-bold tracking-[0.1em] leading-none mb-4 uppercase">
+            <h1 className="text-4xl md:text-[85px] font-bold tracking-[0.1em] leading-none mb-4 capitalize">
               {slides[currentSlide].title}
             </h1>
 
@@ -67,8 +66,8 @@ const Hero = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                currentSlide === index ? "bg-white w-6" : "bg-white/40"
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentSlide === index ? "bg-white w-4" : "bg-white/40"
               }`}
             />
           ))}

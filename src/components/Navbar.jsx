@@ -100,7 +100,7 @@ const Navbar = () => {
       >
         <div 
           className={`absolute right-0 top-0 h-full w-80 bg-white shadow-2xl p-8 transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-          onClick={(e) => e.stopPropagation()} // Click box ke andar rokne ke liye
+          onClick={(e) => e.stopPropagation()} 
         >
           <div className="flex justify-end mb-8">
             <button onClick={() => setIsMobileMenuOpen(false)} className="text-2xl text-gray-800 hover:text-orange-500">
