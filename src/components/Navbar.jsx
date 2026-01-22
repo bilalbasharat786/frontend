@@ -43,18 +43,18 @@ const Navbar = () => {
         }`}
       >
         {/* Logo */}
-        <div className={`text-5xl font-sm -tracking-normal cursor-pointer ${scrolled ? 'text-orange-500' : 'text-white'}`} onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>
+        <div className={`text-3xl font-sm -tracking-normal cursor-pointer ${scrolled ? 'text-orange-500' : 'text-white'}`} onClick={() => window.scrollTo({top:0, behavior:'smooth'})}>
           Banker<span className="text-orange-500">.</span>
         </div>
 
         {/* --- Desktop Menu --- */}
         <div className="hidden md:flex items-center gap-10">
-          <ul className="flex gap-8 text-[13px] font-medium tracking-[0.1em] uppercase items-center">
+          <ul className="flex gap-8 text-[15px] font-normal tracking-[0.1em] capitalize items-center">
             <li onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="cursor-pointer hover:text-orange-500 transition">Home</li>
             
             <li className="relative group py-2">
               <div onClick={() => handleScroll('about-section')} className="cursor-pointer hover:text-orange-500 transition flex items-center gap-1">
-                About Us <span className="text-[10px]">▼</span>
+                About Us  <span className="text-[10px]"><FontAwesomeIcon icon={isAboutOpen ? faChevronUp : faChevronDown} className="text-sm" /></span>
               </div>
               <ul className="absolute left-0 mt-2 w-48 bg-white text-gray-800 py-4 shadow-xl rounded-sm border-t-2 border-orange-500 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
                 {dropdownLinks.map((link, index) => (
