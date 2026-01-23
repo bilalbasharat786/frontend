@@ -62,7 +62,7 @@ const Gallery = () => {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ repeat: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
@@ -94,10 +94,10 @@ const Gallery = () => {
               <motion.div 
                 key={image.id}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }} 
+                exit={{ x: -100, opacity: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }} 
                 onClick={() => setSelectedImg(image.src)} 
                 className="overflow-hidden rounded-sm group cursor-pointer relative"
               >
@@ -114,9 +114,11 @@ const Gallery = () => {
 
         {/* --- How It Works Slider Part --- */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }} 
+          exit={{ x: -100, opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }} 
+          viewport={{ repeat: true }}
           className="text-center mb-16 md:mb-20"
         >
           <h2 className="text-orange-500 text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
@@ -130,10 +132,10 @@ const Gallery = () => {
           
           {/* Left: Image with Animation */}
           <motion.div 
-            key={`img-${activeSlide}`}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }} 
+          exit={{ x: -100, opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }} 
             className="w-full lg:w-1/2 relative"
           >
             <div className="overflow-hidden rounded-sm shadow-2xl">
@@ -164,9 +166,10 @@ const Gallery = () => {
           {/* Right: Text Content with Animation */}
           <motion.div 
             key={`text-${activeSlide}`}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+             initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }} 
+          exit={{ x: -100, opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }} 
             className="w-full lg:w-1/2 text-left"
           >
             <h3 className="text-orange-500 text-5xl md:text-7xl font-bold mb-6 tracking-tighter">
@@ -199,8 +202,10 @@ const Gallery = () => {
             onClick={() => setSelectedImg(null)}
           >
              <motion.img 
-               initial={{ scale: 0.8 }}
-               animate={{ scale: 1 }}
+               initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }} 
+          exit={{ x: -100, opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }} 
                src={selectedImg} 
                className="max-w-full max-h-full object-contain shadow-2xl" 
                alt="Large View" 

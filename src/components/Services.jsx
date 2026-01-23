@@ -23,6 +23,7 @@ const Services = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
+      repeat: true,
       transition: {
         staggerChildren: 0.15 // Har card 0.15s ke gap se aayega
       }
@@ -34,7 +35,8 @@ const Services = () => {
     hidden: { opacity: 0, y: 40 },
     visible: { 
       opacity: 1, 
-      y: 0, 
+      repeat: true,
+      y: 0,
       transition: { duration: 0.7, ease: "easeOut" } 
     }
   };
@@ -45,9 +47,9 @@ const Services = () => {
         
         {/* Section Heading - Slow Fade Up */}
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ repeat: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16 md:mb-20"
         >
@@ -62,7 +64,7 @@ const Services = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ repeat: true, amount: 0.2 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16"
         >
           {serviceData.map((service, index) => (
