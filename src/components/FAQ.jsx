@@ -48,7 +48,6 @@ const FAQ = () => {
     },
   ];
 
-  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,7 +63,7 @@ const FAQ = () => {
 
   return (
     <section id="faq" className="font-sans overflow-hidden">
-      {/* --- Part 1: 8 FAQ Questions --- */}
+   
       <div className="py-16 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.h2
@@ -101,11 +100,10 @@ const FAQ = () => {
         </div>
       </div>
 
-      {/* --- Part 2: Bank Loan Section --- */}
       <div className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            {/* Left side: Image with Slide Animation */}
+      
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -120,7 +118,7 @@ const FAQ = () => {
               />
             </motion.div>
 
-            {/* Right side: Features with Staggered Slide */}
+      
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -128,7 +126,7 @@ const FAQ = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="w-full lg:w-1/2 space-y-12"
             >
-              {/* Feature 1: Bank Loan */}
+            
               <div className="flex flex-col sm:flex-row gap-6 items-start group">
                 <div className="w-16 h-16 flex-shrink-0  p-2 rounded-xl group-hover:bg-orange-100 transition-colors">
                   <img
@@ -155,7 +153,7 @@ const FAQ = () => {
                 </div>
               </div>
 
-              {/* Feature 2: Banking Consultation */}
+      
               <div className="flex flex-col sm:flex-row gap-6 items-start group">
                 <div className="w-16 h-16 flex-shrink-0 p-2 rounded-xl group-hover:bg-orange-100 transition-colors">
                   <img
