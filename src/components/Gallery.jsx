@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// Images import
 import img1 from "../assets/img_1.jpg";
 import img2 from "../assets/img_2.jpg";
 import img3 from "../assets/img_3.jpg";
@@ -44,7 +43,7 @@ const Gallery = () => {
     },
   ];
 
-  // Auto Slide Logic (5 Seconds)
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
@@ -62,7 +61,6 @@ const Gallery = () => {
       className="py-16 md:py-24 bg-white font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* --- Top Gallery Part --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +72,6 @@ const Gallery = () => {
             Gallery
           </h2>
 
-          {/* Filter Buttons - Responsive Wrap */}
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
             {["ALL", "EVENTS", "PARTY", "HOLIDAYS"].map((btn) => (
               <button
@@ -91,8 +88,6 @@ const Gallery = () => {
             ))}
           </div>
         </motion.div>
-
-        {/* Gallery Grid: 1 col on Mobile, 2 on Tablet, 4 on Desktop */}
         <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-32"
@@ -119,8 +114,6 @@ const Gallery = () => {
             ))}
           </AnimatePresence>
         </motion.div>
-
-        {/* --- How It Works Slider Part --- */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -137,10 +130,7 @@ const Gallery = () => {
             the necessary regelialia.
           </p>
         </motion.div>
-
-        {/* Responsive Slider Flex Row */}
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 min-h-[450px]">
-          {/* Left: Image with Animation */}
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -156,7 +146,7 @@ const Gallery = () => {
               />
             </div>
 
-            {/* Orange Navigation Buttons */}
+      
             <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 flex bg-orange-500 shadow-xl z-10">
               <button
                 onClick={() =>
@@ -179,7 +169,7 @@ const Gallery = () => {
             </div>
           </motion.div>
 
-          {/* Right: Text Content with Animation */}
+        
           <motion.div
             key={`text-${activeSlide}`}
             initial={{ x: 100, opacity: 0 }}
@@ -208,7 +198,7 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* Lightbox - Full Screen Image View */}
+    
       <AnimatePresence>
         {selectedImg && (
           <motion.div
