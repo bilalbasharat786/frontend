@@ -38,7 +38,7 @@ const Blog = () => {
     },
   ];
 
-  // Animation Variants for staggered effect
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -62,7 +62,7 @@ const Blog = () => {
       className="py-16 md:py-24 bg-white font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Heading with Slow Fade In */}
+    
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,6 @@ const Blog = () => {
           Our Blog
         </motion.h2>
 
-        {/* Blog Grid: 1 Col on Mobile, 2 on Tablet, 3 on Desktop */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -87,7 +86,7 @@ const Blog = () => {
               variants={postVariants}
               className="flex flex-col group cursor-pointer"
             >
-              {/* Image Section with Hover Zoom */}
+    
               <div className="overflow-hidden mb-8 rounded-sm shadow-sm">
                 <motion.img
                   whileHover={{ scale: 1.1 }}
@@ -98,13 +97,11 @@ const Blog = () => {
                 />
               </div>
 
-              {/* Content Section */}
               <div className="text-left">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4 leading-snug group-hover:text-orange-500 transition-colors duration-300">
                   {post.title}
                 </h3>
 
-                {/* Meta Data */}
                 <div className="flex items-center text-[12px] md:text-[13px] text-gray-400 mb-5 space-x-2 font-medium tracking-wide">
                   <span className="hover:text-gray-600 transition-colors">
                     {post.author}
@@ -121,7 +118,6 @@ const Blog = () => {
                   {post.description}
                 </p>
 
-                {/* Continue Reading Link with Animated Arrow */}
                 <motion.a
                   href="#"
                   whileHover={{ x: 5 }}
