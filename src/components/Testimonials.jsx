@@ -57,12 +57,11 @@ const Testimonials = () => {
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {/* Review Text */}
+             
               <p className="text-gray-400 text-lg md:text-xl italic font-light leading-relaxed mb-10 max-w-3xl mx-auto px-2">
                 {reviews[activeTab].text}
               </p>
 
-              {/* User Info (Image & Name) */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -81,7 +80,6 @@ const Testimonials = () => {
           </AnimatePresence>
         </div>
 
-        {/* Pagination Dots */}
         <div className="flex justify-center gap-4 mt-12 md:mt-16">
           {reviews.map((_, index) => (
             <button
@@ -96,7 +94,7 @@ const Testimonials = () => {
                     : "bg-gray-200 group-hover:bg-gray-300"
                 }`}
               />
-              {/* Tooltip or Ring Effect on Active */}
+        
               {activeTab === index && (
                 <motion.span
                   layoutId="activeDot"
