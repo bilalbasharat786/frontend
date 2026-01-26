@@ -39,7 +39,7 @@ const Features = () => {
       className="py-16 md:py-24 bg-white font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Top Features Grid - Mobile (1 col), Tablet (2 col), Laptop (3 col) */}
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 text-center mb-24 md:mb-32">
           {features.map((item, index) => (
             <motion.div
@@ -67,9 +67,9 @@ const Features = () => {
           ))}
         </div>
 
-        {/* Amortization Section - Responsive Flex */}
+   
         <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-16">
-          {/* Left: Image with Slow Motion Fade In */}
+  
           <motion.div
             className="w-full lg:w-1/2"
             initial={{ opacity: 0, y: 80 }}
@@ -84,7 +84,6 @@ const Features = () => {
             />
           </motion.div>
 
-          {/* Right: Content with Slow Motion Fade In */}
           <motion.div
             className="w-full lg:w-1/2 text-left"
             initial={{ opacity: 0, y: 80 }}
@@ -118,7 +117,6 @@ const Features = () => {
               ))}
             </ul>
 
-            {/* Responsive Form */}
             <form className="flex flex-col sm:flex-row gap-4 items-center w-full">
               <input
                 type="email"

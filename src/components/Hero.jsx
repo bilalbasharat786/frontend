@@ -23,7 +23,6 @@ const Hero = () => {
     },
   ];
 
-  // Har 3 second baad auto-change
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -48,14 +47,14 @@ const Hero = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       ></div>
       <div className="absolute inset-0 bg-[#b8b2a6b3] flex flex-col items-center justify-center text-center px-4 text-white">
-        {/* AnimatePresence slides */}
+        
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
-            initial={{ x: 100, opacity: 0 }} // Right side se start
-            animate={{ x: 0, opacity: 1 }} // Center mein aana
-            exit={{ x: -100, opacity: 0 }} // Left side par nikal jana
-            transition={{ duration: 0.8, ease: "easeOut" }} // Slow motion effect
+            initial={{ x: 100, opacity: 0 }} 
+            animate={{ x: 0, opacity: 1 }} 
+            exit={{ x: -100, opacity: 0 }} 
+            transition={{ duration: 0.8, ease: "easeOut" }} 
             className="flex flex-col items-center"
           >
             <h1 className="text-4xl md:text-[85px] font-bold tracking-[0.1em] leading-none mb-4 capitalize">
@@ -68,7 +67,7 @@ const Hero = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* --- 3 Dots Navigation --- */}
+       
         <div className="flex gap-3 mt-10">
           {slides.map((_, index) => (
             <button
@@ -81,7 +80,7 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Mouse Scroll Icon */}
+
         <div
           onClick={scrollToFeatures}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer hover:scale-110 transition-all"

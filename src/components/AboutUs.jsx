@@ -1,9 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion"; // Animation library
+import { motion } from "framer-motion"; 
 import aboutUsImg from "../assets/aboutus.jpg";
 
 const AboutUs = () => {
-  // Animation Variants
   const textFadeIn = {
     hidden: { opacity: 0, y: 80 },
     visible: { opacity: 1, y: 0, transition: { duration: 2, ease: "easeOut" } },
@@ -20,7 +19,7 @@ const AboutUs = () => {
       className="py-16 md:py-24 bg-white font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Heading with Slow Fade Up */}
+ 
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,9 +36,9 @@ const AboutUs = () => {
           </p>
         </motion.div>
 
-        {/* Content Row: Stacked on Mobile, Side-by-Side on Desktop */}
+        
         <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
-          {/* Left Side: Image with Slide-in-Left Animation */}
+
           <motion.div
             className="w-full lg:w-1/2 relative"
             initial="hidden"
@@ -47,7 +46,7 @@ const AboutUs = () => {
             viewport={{ repeat: true, amount: 0.3 }}
             variants={imageFadeIn}
           >
-            {/* Background decorative circle - Hidden on very small screens */}
+   
             <div className="hidden sm:block absolute -bottom-10 -left-10 w-48 h-48 md:w-64 md:h-64 bg-gray-50 rounded-full -z-10"></div>
             <img
               src={aboutUsImg}
@@ -56,7 +55,6 @@ const AboutUs = () => {
             />
           </motion.div>
 
-          {/* Right Side: Text with Slide-in-Right Animation */}
           <motion.div
             className="w-full lg:w-1/2 text-left"
             initial="hidden"

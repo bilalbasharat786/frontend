@@ -51,15 +51,12 @@ const Navbar = () => {
             : "bg-transparent text-white border-b border-white/20"
         }`}
       >
-        {/* Logo */}
         <div
           className={`text-3xl font-sm -tracking-normal cursor-pointer ${scrolled ? "text-orange-500" : "text-white"}`}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           Banker<span className="text-orange-500">.</span>
         </div>
-
-        {/* --- Desktop Menu --- */}
         <div className="hidden md:flex items-center gap-10">
           <ul className="flex gap-8 text-[15px] font-normal tracking-[0.1em] capitalize items-center">
             <li
@@ -108,7 +105,6 @@ const Navbar = () => {
               Contact
             </li>
           </ul>
-          {/* ADDED: Desktop Social Icons */}
           <div className="flex gap-5 text-sm ml-4 ">
             <a
               href="#"
@@ -131,7 +127,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* --- Mobile Hamburger --- */}
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(true)}
@@ -142,7 +137,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* --- Mobile Sidebar (Right Side - Half Width) --- */}
+   
       <div
         className={`fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
         onClick={() => setIsMobileMenuOpen(false)}
@@ -171,7 +166,6 @@ const Navbar = () => {
               Home
             </li>
 
-            {/* Mobile Dropdown Logic */}
             <li>
               <div
                 className="flex justify-between items-center cursor-pointer hover:text-orange-500"
