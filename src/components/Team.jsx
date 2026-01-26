@@ -53,7 +53,7 @@ const Team = () => {
       className="py-16 md:py-24 bg-white font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Heading */}
+    
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,6 @@ const Team = () => {
           </p>
         </motion.div>
 
-        {/* Team Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -84,16 +83,16 @@ const Team = () => {
               variants={itemVariants}
               className="flex flex-col group"
             >
-              {/* Image Container with Social Icons Overlay */}
+        
               <div className="relative overflow-hidden mb-5 rounded-sm shadow-sm transition-all duration-300">
-                {/* Main Image */}
+               
                 <img
                   src={member.img}
                   alt={member.name}
                   className="w-full h-auto object-cover aspect-[4/5]"
                 />
 
-                {/* Orange Social Bar (Image wali logic) */}
+            
                 <div className="absolute top-0 left-0 h-full w-12 bg-orange-500 flex flex-col items-center justify-start pt-8 gap-6 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
                   <a
                     href="#"
@@ -122,7 +121,7 @@ const Team = () => {
                 </div>
               </div>
 
-              {/* Name & Role */}
+       
               <div className="text-left">
                 <h3 className="text-xl font-medium text-gray-800 tracking-tight group-hover:text-orange-500 transition-colors">
                   {member.name}

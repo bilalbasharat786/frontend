@@ -79,7 +79,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            {/* Action Link if needed */}
+       
           </motion.div>
         </div>
       </div>
