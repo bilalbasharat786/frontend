@@ -42,7 +42,6 @@ const Pricing = () => {
     },
   ];
 
-  // Animation Variants
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: (i) => ({
@@ -62,7 +61,6 @@ const Pricing = () => {
       className="py-16 md:py-24 bg-gray-50 font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Heading */}
         <motion.h2
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -73,7 +71,7 @@ const Pricing = () => {
           Pricing
         </motion.h2>
 
-        {/* Pricing Cards Grid - Responsive columns */}
+    
         <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-8 lg:gap-0">
           {plans.map((plan, index) => (
             <motion.div
@@ -106,7 +104,7 @@ const Pricing = () => {
                 </span>
               </div>
 
-              {/* Features List */}
+         
               <ul className="space-y-5 mb-12 text-left inline-block w-full">
                 {plan.features.map((feature, i) => (
                   <li
@@ -129,7 +127,7 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              {/* Buy Now Button */}
+       
               <motion.div whileTap={{ scale: 0.95 }}>
                 <button
                   className={`w-full ${plan.buttonClass} text-white px-8 py-4 rounded-full font-bold uppercase text-[12px] tracking-widest transition-all shadow-lg`}
