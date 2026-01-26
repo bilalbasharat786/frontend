@@ -1,12 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion"; // Animation library
+import { motion } from "framer-motion"; 
 // Icons import
 import iconAddress from "../assets/icons3.jpeg";
 import iconPhone from "../assets/icons4.jpeg";
 import iconEmail from "../assets/icons5.jpeg";
 
 const Contact = () => {
-  // Animation Variants for top info cards
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,7 +29,7 @@ const Contact = () => {
       className="py-16 md:py-24 bg-gray-50 font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Heading with Animation */}
+  
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +40,7 @@ const Contact = () => {
           Contact Us
         </motion.h2>
 
-        {/* --- Top Part: Contact Info (3 Columns Responsive) --- */}
+    
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -49,7 +48,7 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.2 }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mb-20 md:mb-24"
         >
-          {/* Address */}
+       
           <motion.div
             variants={itemVariants}
             className="flex flex-col items-center text-center group"
@@ -66,7 +65,7 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          {/* Phone */}
+ 
           <motion.div
             variants={itemVariants}
             className="flex flex-col items-center text-center group"
@@ -83,7 +82,7 @@ const Contact = () => {
             </p>
           </motion.div>
 
-          {/* Email */}
+
           <motion.div
             variants={itemVariants}
             className="flex flex-col items-center text-center group sm:col-span-2 md:col-span-1"
@@ -101,7 +100,6 @@ const Contact = () => {
           </motion.div>
         </motion.div>
 
-        {/* --- Bottom Part: Contact Form Box (Slide Up Animation) --- */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,7 +112,7 @@ const Contact = () => {
           </h3>
 
           <form className="space-y-6 md:space-y-8">
-            {/* Name Row (1 col on mobile, 2 on md) */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="flex flex-col items-start w-full">
                 <label className="text-gray-700 mb-3 font-semibold text-sm uppercase tracking-wide">
@@ -136,7 +134,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Email Field */}
             <div className="flex flex-col items-start w-full">
               <label className="text-gray-700 mb-3 font-semibold text-sm uppercase tracking-wide">
                 Email
@@ -147,7 +144,7 @@ const Contact = () => {
               />
             </div>
 
-            {/* Subject Field */}
+
             <div className="flex flex-col items-start w-full">
               <label className="text-gray-700 mb-3 font-semibold text-sm uppercase tracking-wide">
                 Subject
@@ -158,7 +155,6 @@ const Contact = () => {
               />
             </div>
 
-            {/* Message Field */}
             <div className="flex flex-col items-start w-full">
               <label className="text-gray-700 mb-3 font-semibold text-sm uppercase tracking-wide">
                 Message
@@ -170,7 +166,6 @@ const Contact = () => {
               ></textarea>
             </div>
 
-            {/* Submit Button */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
