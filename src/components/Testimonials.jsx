@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Animation library
-// Assets import
+import { motion, AnimatePresence } from "framer-motion";
 import p1 from "../assets/person_1.jpg";
 import p2 from "../assets/person_2.jpg";
 import p3 from "../assets/person_3.jpg";
@@ -38,7 +37,6 @@ const Testimonials = () => {
       className="py-16 md:py-24 bg-white font-sans overflow-hidden"
     >
       <div className="max-w-4xl mx-auto px-6 text-center">
-        {/* Main Heading with Scroll Animation */}
         <motion.h2
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +47,7 @@ const Testimonials = () => {
           Happy Customers
         </motion.h2>
 
-        {/* Content Wrapper with AnimatePresence for smooth switching */}
+     
         <div className="relative min-h-[300px] md:min-h-[250px] flex flex-col justify-center">
           <AnimatePresence mode="wait">
             <motion.div
