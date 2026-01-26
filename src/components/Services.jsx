@@ -1,6 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // Animation library
-// Assets se icons import
+import { motion } from "framer-motion"; 
 import s1 from "../assets/services_1.svg";
 import s2 from "../assets/services_2.svg";
 import s3 from "../assets/services_3.svg";
@@ -42,19 +41,18 @@ const Services = () => {
     },
   ];
 
-  // Container Variant: Cards ko bari bari show karne ke liye
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       repeat: true,
       transition: {
-        staggerChildren: 0.15, // Har card 0.15s ke gap se aayega
+        staggerChildren: 0.15, 
       },
     },
   };
 
-  // Card Variant: Niche se upar aane wali animation
+
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -71,7 +69,6 @@ const Services = () => {
       className="py-16 md:py-24 bg-gray-50 font-sans overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Section Heading - Slow Fade Up */}
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +82,7 @@ const Services = () => {
           <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        {/* Services Grid - Responsive: 1 Col (Mobile), 2 Col (Tablet), 3 Col (Desktop) */}
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -99,7 +96,7 @@ const Services = () => {
               variants={cardVariants}
               className="flex flex-col items-start group"
             >
-              {/* Icon Container with Hover Animation */}
+        
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 className="mb-6 p-4 "
@@ -111,7 +108,7 @@ const Services = () => {
                 />
               </motion.div>
 
-              {/* Text Content */}
+              
               <h3 className="text-xl font-semibold text-gray-800 mb-3 group-hover:text-orange-500 transition-colors duration-300">
                 {service.title}
               </h3>
@@ -120,7 +117,7 @@ const Services = () => {
                 {service.desc}
               </p>
 
-              {/* Learn More Link */}
+    
               <motion.a
                 href="#"
                 whileHover={{ x: 5 }}
