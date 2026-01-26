@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import heroImage from "../assets/hero_2.jpg";
 
 const Hero = () => {
@@ -8,16 +8,19 @@ const Hero = () => {
   const slides = [
     {
       title: "Banking Solutions",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident cupiditate suscipit, magnam libero velit esse sapiente officia inventore!"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident cupiditate suscipit, magnam libero velit esse sapiente officia inventore!",
     },
     {
       title: "Financing Solutions",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident cupiditate suscipit, magnam libero velit esse sapiente officia inventore!"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident cupiditate suscipit, magnam libero velit esse sapiente officia inventore!",
     },
     {
       title: "Savings Accounts",
-      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident cupiditate suscipit, magnam libero velit esse sapiente officia inventore!"
-    }
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident cupiditate suscipit, magnam libero velit esse sapiente officia inventore!",
+    },
   ];
 
   // Har 3 second baad auto-change
@@ -36,17 +39,22 @@ const Hero = () => {
   };
 
   return (
-    <section className="h-screen bg-cover bg-center relative font-sans overflow-hidden" style={{ backgroundImage: `url(${heroImage})` }}>
-      <div className="absolute inset-0 bg-cover bg-center scale-110" style={{ backgroundImage: `url(${heroImage})` }}></div>
+    <section
+      className="h-screen bg-cover bg-center relative font-sans overflow-hidden"
+      style={{ backgroundImage: `url(${heroImage})` }}
+    >
+      <div
+        className="absolute inset-0 bg-cover bg-center scale-110"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      ></div>
       <div className="absolute inset-0 bg-[#b8b2a6b3] flex flex-col items-center justify-center text-center px-4 text-white">
-        
         {/* AnimatePresence slides */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
             initial={{ x: 100, opacity: 0 }} // Right side se start
-            animate={{ x: 0, opacity: 1 }}    // Center mein aana
-            exit={{ x: -100, opacity: 0 }}   // Left side par nikal jana
+            animate={{ x: 0, opacity: 1 }} // Center mein aana
+            exit={{ x: -100, opacity: 0 }} // Left side par nikal jana
             transition={{ duration: 0.8, ease: "easeOut" }} // Slow motion effect
             className="flex flex-col items-center"
           >
@@ -74,7 +82,7 @@ const Hero = () => {
         </div>
 
         {/* Mouse Scroll Icon */}
-        <div 
+        <div
           onClick={scrollToFeatures}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer hover:scale-110 transition-all"
         >
@@ -82,7 +90,6 @@ const Hero = () => {
             <div className="w-1 h-1.5 bg-white rounded-full animate-bounce mt-1"></div>
           </div>
         </div>
-
       </div>
     </section>
   );
